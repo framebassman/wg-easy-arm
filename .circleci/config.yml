@@ -15,4 +15,4 @@ jobs:
       - checkout
       - run:
           name: run wg-easy
-          command: docker compose up
+          command: docker compose up -d
