@@ -1,0 +1,18 @@
+version: 2.1
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - run-wg
+
+jobs:
+  run-wg:
+    machine:
+      image: ubuntu-2204:2023.07.1
+    resource_class: arm.medium
+    steps:
+      - checkout
+      - run:
+          name: run wg-easy
+          command: docker compose up -d
